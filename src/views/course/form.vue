@@ -37,6 +37,17 @@ export default {
       active: 0,
       courseId: null
     }
+  },
+
+  created() {
+    // 通过获取路由名称 判断进入哪个步骤
+    if (this.$route.name === 'CourseInfoEdit') {
+      this.courseId = this.$route.params.id
+      this.active = 0
+    } else if (this.$route.name === 'CourseChapterEdit') {
+      this.courseId = this.$route.params.id
+      this.active = 1
+    }
   }
 }
 </script>

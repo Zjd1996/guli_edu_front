@@ -112,11 +112,12 @@ export default {
   },
 
   created() {
-    // 从路由过来
-    if (this.$route.name === 'CourseInfoEdit') {
-      this.$parent.courseId = this.$route.params.id
-    }
+    // 从路由来判断
+    // if (this.$route.name === 'CourseInfoEdit') {
+    //   this.$parent.courseId = this.$route.params.id
+    // }
 
+    // courseId来源于父组件
     if (this.$parent.courseId) { // 回显
       this.fetchCourseInfoById(this.$parent.courseId)
     } else { // 新增：只渲染一级类别
